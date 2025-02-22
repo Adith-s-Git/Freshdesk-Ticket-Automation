@@ -1,0 +1,34 @@
+{
+  "platform-version": "2.3",
+  "product": {
+    "freshdesk": {
+      "events": {
+        "onTicketCreate": {
+          "handler": "onTicketCreateHandler"
+        },
+        "onAppInstall": {
+          "handler": "onAppInstallCallback"
+        },
+        "afterAppUpdate": {
+          "handler": "onAppUpdateCallback"
+        },
+        "onAppUninstall": {
+          "handler": "onAppUninstallCallback"
+        },
+        "onScheduledEvent": {
+          "handler": "onScheduledEventHandler"
+        }
+      },
+      "requests": {
+        "validateAPI": {},
+        "createTicket":{},
+        "createNotes":{}
+      }
+    
+    }
+  },
+  "engines": {
+    "node": "18.20.3",
+    "fdk": "9.3.0"
+  }
+}

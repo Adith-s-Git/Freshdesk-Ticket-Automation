@@ -1,0 +1,32 @@
+{
+    "domain_name": {
+       "display_name": "Domain Name",
+       "description": "Enter your freshdesk domain name",
+       "type": "domain",
+       "data-bind": "product.domain",
+       "type_attributes": {
+           "product": "freshdesk"
+       },
+       "required": true
+   },
+   "api_key": {
+       "display_name": "API Key",
+       "description": "Enter your API key",
+       "type": "api_key",
+       "secure": true,
+       "required": true,
+       "data-bind": "product.api_key",
+       "type_attributes": {
+           "product": "freshdesk"
+       }
+   },
+   "total_tickets": {
+       "display_name": "Total Tickets",
+       "description": "Enter the total number of tickets to be created per day",
+       "type": "number",
+       "required": true,
+       "events": [
+        {"change": "validateTicketCount"}
+      ]
+   }
+}

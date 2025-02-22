@@ -1,0 +1,38 @@
+{
+    "validateAPI":{
+        "schema": {
+            "protocol": "https",
+            "method": "GET",
+            "host": "<%= context.domain %>.freshdesk.com",
+            "path": "/api/v2/tickets",
+            "headers": {
+              "Authorization": "Basic <%= encode(context.apiKey) %>",
+              "Content-Type": "application/json"
+            }
+          }
+    },
+    "createTicket":{
+        "schema":{
+            "protocol":"https",
+            "method":"POST",
+            "host":"<%= iparam.domain_name %>.freshdesk.com",
+            "path":"/api/channel/v2/tickets",
+            "headers":{
+              "Content-Type":"application/json",
+              "Authorization": "Basic <%= encode(iparam.api_key) %>"
+          }
+        }
+    },
+    "createNotes":{
+        "schema":{
+            "protocol":"https",
+            "method":"POST",
+            "host":"<%= iparam.domain_name %>.freshdesk.com",
+            "path":"/api/v2/tickets/<%=context.ticketId%>/notes",
+            "headers":{
+              "Content-Type":"application/json",
+              "Authorization": "Basic <%= encode(iparam.api_key) %>"
+             }
+        }
+    }
+}
